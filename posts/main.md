@@ -1,5 +1,5 @@
 ---
-title: 'You don't have to be an expert, you just have to be confident in your ability to figure things out'
+title: 'You don't have to be an expert'
 date: '2020-01-03'
 ---
 
