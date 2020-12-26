@@ -24,6 +24,7 @@ export function getSortedPostsData() {
   });
 
   // Sort posts by date
+  //@ts-ignore
   return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
