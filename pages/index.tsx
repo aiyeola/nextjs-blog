@@ -2,10 +2,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
 
-// import Date from '../components/date';
-import Date from '@/components/date'
+import Date from '@components/date'
 import utilStyles from '../styles/utils.module.css';
-import Layout, { siteTitle } from '../components/layout';
+import Layout, { siteTitle } from '@components/layout';
 import { getSortedPostsData } from '../lib/posts';
 
 type Posts = {
