@@ -6,19 +6,21 @@ let state;
 let activeRequests = 0;
 const delay = 250;
 
-function load() {
+NProgress.configure({ showSpinner: false });
+
+const load = () => {
   if (state === 'loading') {
     return;
   }
 
   state = 'loading';
 
-  timer = setTimeout(function () {
+  timer = setTimeout(() => {
     NProgress.start();
   }, delay); // only show progress bar if it takes longer than the delay
-}
+};
 
-function stop() {
+const stop = () => {
   if (activeRequests > 0) {
     return;
   }
@@ -27,14 +29,14 @@ function stop() {
 
   clearTimeout(timer);
   NProgress.done();
-}
+};
 
 Router.events.on('routeChangeStart', load);
 Router.events.on('routeChangeComplete', stop);
 Router.events.on('routeChangeError', stop);
 
 const originalFetch = window.fetch;
-window.fetch = async function (...args) {
+window.fetch = async (...args) => {
   if (activeRequests === 0) {
     load();
   }
